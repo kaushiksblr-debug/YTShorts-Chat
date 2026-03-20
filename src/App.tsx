@@ -465,7 +465,8 @@ export default function App() {
     setFriends(profiles);
   };
 
-  useEffect(() => { if (currentUser) loadFriends(); }, [currentUser]);
+  useEffect(() => { if (currentUser) loadFriends(); // eslint-disable-next-line react-hooks/exhaustive-deps
+}, [currentUser]);
 
   useEffect(() => {
     if (!currentUser || (!openDM && !openGroup)) { setMessages([]); return; }
